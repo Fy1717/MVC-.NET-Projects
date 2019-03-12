@@ -1,0 +1,28 @@
+﻿@model PersonelMVCUI2.Models.EntityFramework.Departman
+@{
+    ViewBag.Title = "Yeni";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<h2 class="toast-header">DEPARTMAN FORMU</h2>
+
+@using (Html.BeginForm("Kaydet", "Departman", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Ad)
+        @Html.TextBoxFor(m => m.Ad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Ad)
+
+    </div>
+    @Html.HiddenFor(m => m.Id)
+    <button type="submit" class="btn btn-success"> KAYDET </button>
+}
+
+@section scripts{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}

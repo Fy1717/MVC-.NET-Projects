@@ -1,0 +1,41 @@
+﻿@using PersonelMVC_2.Models;
+
+@{
+    Layout = null;
+    /*var gelenDepartman = (Departman)ViewData["departman"];*/
+    /* Gelen Verinin ViewData ile bir Departman olduğunu anlıyor . */
+
+    /*var gelenDepartman = (Departman)ViewBag.Departman;*/
+    /* Gelen Verinin ViewBag bir Departman olduğunu anlıyor . */
+
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detay</title>
+</head>
+<body>
+
+    <h2> DEPARTMAN DETAY SAYFASI </h2>
+    
+    <h4>  DEPARTMAN ID  : @Model.Departman.Id  ----   DEPARTMAN ADI  : @Model.Departman.Ad </h4>
+
+    <ul>
+
+        @foreach (var personel in Model.Personeller)
+        {
+            <li>
+                @personel.Ad
+            </li>
+        }
+
+    </ul>
+
+
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿@model PersonelMVCUI.Models.EntityFramework.Departman
+@{
+    ViewBag.Title = "Yeni";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Yeni</h2>
+
+@using (Html.BeginForm("Yeni", "Departman", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m=>m.Ad)
+        @Html.TextBoxFor(m=>m.Ad, new { @class="form-control"})
+
+    </div>
+
+    <button type="submit" class="btn btn-success">EKLE</button>
+}
+
